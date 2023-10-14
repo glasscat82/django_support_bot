@@ -1,0 +1,53 @@
+{% block pagination %}
+    {% if is_paginated %}
+    <nav aria-label="page">
+    <ul class="pagination pagination-lg">
+        
+        {% if page_obj.has_previous %}
+            {% if page_obj.number|add:'-3' > 1 %}
+                <li class="page-item">
+                    <a class="page-link" href="?{{ q }}{{ year }}page=1">1</a>
+                </li>
+            {% endif %}
+            {% if page_obj.number|add:'-3' >= 3 %}
+                <li class="page-item">
+                        <a class="page-link" href="?{{ q }}{{ year }}page={{ page_obj.previous_page_number|add:'-3' }}">
+                    <span class="pagination__link">• • •</span>
+                    </a>
+                </li>
+            {% endif %}
+        {% endif %}
+        
+        {% if paginator.page_range|length > 1 %} 
+        {% for n in page_obj.paginator.page_range %}
+            {% if page_obj.number == n %}
+            <li class="page-item active" aria-current="page"><a class="page-link" href="?page={{ n }}">{{ n }}</a></li>         
+            {% elif n > page_obj.number|add:'-4' and n < page_obj.number|add:'4' %}
+                <li class="page-item">
+                <a class="page-link" href="?{{ q }}{{ year }}page={{ n }}">{{ n }}</a>
+                </li>
+            {% endif %}
+        {% endfor %}
+        {% endif %}
+
+        {% if page_obj.has_next %}
+        {% if page_obj.number|add:'4' < page_obj.paginator.num_pages %}
+            <li class="page-item">
+                <a class="page-link" href="?{{ q }}{{ year }}page={{ page_obj.next_page_number|add:'3' }}">
+                    <span class="pagination__link">• • •</span>
+                </a>
+            </li>
+        {% endif %}
+        {% if page_obj.number|add:'3' < page_obj.paginator.num_pages %}
+            <li class="page-item">
+                <a class="page-link" href="?{{ q }}{{ year }}page={{ page_obj.paginator.num_pages }}">
+                    {{ page_obj.paginator.num_pages }}
+                </a>
+            </li>
+        {% endif %} 
+        {% endif %}
+        
+    </ul>
+    </nav>
+    {% endif %}
+{% endblock %}

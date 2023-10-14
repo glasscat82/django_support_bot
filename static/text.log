@@ -1,0 +1,228 @@
+18:26:53 - autoreload - INFO - trigger_reload: 266 - /home/otolaa/dj_/quport/support_bot/urls.py changed, reloading.
+19:15:07 - log - WARNING - log_response: 241 - Not Found: /favicon.ico
+19:16:53 - log - WARNING - log_response: 241 - Not Found: /favicon.ico
+19:17:36 - autoreload - INFO - trigger_reload: 266 - /home/otolaa/dj_/quport/support_bot/models.py changed, reloading.
+19:17:37 - autoreload - INFO - trigger_reload: 266 - /home/otolaa/dj_/quport/support_bot/models.py changed, reloading.
+19:18:30 - log - WARNING - log_response: 241 - Not Found: /favicon.ico
+19:19:07 - log - WARNING - log_response: 241 - Not Found: /favicon.ico
+19:19:25 - log - WARNING - log_response: 241 - Not Found: /favicon.ico
+19:19:55 - log - WARNING - log_response: 241 - Not Found: /favicon.ico
+19:19:56 - log - WARNING - log_response: 241 - Not Found: /favicon.ico
+19:20:40 - log - ERROR - log_response: 241 - Internal Server Error: /admin/support_bot/chat/add/
+Traceback (most recent call last):
+  File "/home/otolaa/dj_/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/otolaa/dj_/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/otolaa/dj_/venv/lib/python3.8/site-packages/django/contrib/admin/options.py", line 688, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/home/otolaa/dj_/venv/lib/python3.8/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/otolaa/dj_/venv/lib/python3.8/site-packages/django/views/decorators/cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/otolaa/dj_/venv/lib/python3.8/site-packages/django/contrib/admin/sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "/home/otolaa/dj_/venv/lib/python3.8/site-packages/django/contrib/admin/options.py", line 1886, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+  File "/home/otolaa/dj_/venv/lib/python3.8/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/otolaa/dj_/venv/lib/python3.8/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/otolaa/dj_/venv/lib/python3.8/site-packages/django/contrib/admin/options.py", line 1747, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+  File "/home/otolaa/dj_/venv/lib/python3.8/site-packages/django/contrib/admin/options.py", line 1804, in _changeform_view
+    self.log_addition(request, new_object, change_message)
+  File "/home/otolaa/dj_/venv/lib/python3.8/site-packages/django/contrib/admin/options.py", line 926, in log_addition
+    object_repr=str(obj),
+TypeError: __str__ returned non-string (type int)
+19:21:29 - autoreload - INFO - trigger_reload: 266 - /home/otolaa/dj_/quport/support_bot/models.py changed, reloading.
+19:21:31 - autoreload - INFO - trigger_reload: 266 - /home/otolaa/dj_/quport/support_bot/models.py changed, reloading.
+19:21:33 - autoreload - INFO - trigger_reload: 266 - /home/otolaa/dj_/quport/support_bot/models.py changed, reloading.
+19:21:38 - autoreload - INFO - trigger_reload: 266 - /home/otolaa/dj_/quport/support_bot/models.py changed, reloading.
+19:22:05 - log - ERROR - log_response: 241 - Internal Server Error: /admin/support_bot/chat/add/
+Traceback (most recent call last):
+  File "/home/otolaa/dj_/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/otolaa/dj_/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/otolaa/dj_/venv/lib/python3.8/site-packages/django/contrib/admin/options.py", line 688, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/home/otolaa/dj_/venv/lib/python3.8/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/otolaa/dj_/venv/lib/python3.8/site-packages/django/views/decorators/cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/otolaa/dj_/venv/lib/python3.8/site-packages/django/contrib/admin/sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "/home/otolaa/dj_/venv/lib/python3.8/site-packages/django/contrib/admin/options.py", line 1886, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+  File "/home/otolaa/dj_/venv/lib/python3.8/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/otolaa/dj_/venv/lib/python3.8/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/otolaa/dj_/venv/lib/python3.8/site-packages/django/contrib/admin/options.py", line 1747, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+  File "/home/otolaa/dj_/venv/lib/python3.8/site-packages/django/contrib/admin/options.py", line 1804, in _changeform_view
+    self.log_addition(request, new_object, change_message)
+  File "/home/otolaa/dj_/venv/lib/python3.8/site-packages/django/contrib/admin/options.py", line 926, in log_addition
+    object_repr=str(obj),
+TypeError: __str__ returned non-string (type int)
+19:22:34 - log - ERROR - log_response: 241 - Internal Server Error: /admin/support_bot/chat/add/
+Traceback (most recent call last):
+  File "/home/otolaa/dj_/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/otolaa/dj_/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/otolaa/dj_/venv/lib/python3.8/site-packages/django/contrib/admin/options.py", line 688, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/home/otolaa/dj_/venv/lib/python3.8/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/otolaa/dj_/venv/lib/python3.8/site-packages/django/views/decorators/cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/otolaa/dj_/venv/lib/python3.8/site-packages/django/contrib/admin/sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "/home/otolaa/dj_/venv/lib/python3.8/site-packages/django/contrib/admin/options.py", line 1886, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+  File "/home/otolaa/dj_/venv/lib/python3.8/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/otolaa/dj_/venv/lib/python3.8/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/otolaa/dj_/venv/lib/python3.8/site-packages/django/contrib/admin/options.py", line 1747, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+  File "/home/otolaa/dj_/venv/lib/python3.8/site-packages/django/contrib/admin/options.py", line 1804, in _changeform_view
+    self.log_addition(request, new_object, change_message)
+  File "/home/otolaa/dj_/venv/lib/python3.8/site-packages/django/contrib/admin/options.py", line 926, in log_addition
+    object_repr=str(obj),
+TypeError: __str__ returned non-string (type int)
+19:22:49 - log - WARNING - log_response: 241 - Not Found: /favicon.ico
+19:23:00 - log - ERROR - log_response: 241 - Internal Server Error: /admin/support_bot/chat/add/
+Traceback (most recent call last):
+  File "/home/otolaa/dj_/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/otolaa/dj_/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/otolaa/dj_/venv/lib/python3.8/site-packages/django/contrib/admin/options.py", line 688, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/home/otolaa/dj_/venv/lib/python3.8/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/otolaa/dj_/venv/lib/python3.8/site-packages/django/views/decorators/cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/otolaa/dj_/venv/lib/python3.8/site-packages/django/contrib/admin/sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "/home/otolaa/dj_/venv/lib/python3.8/site-packages/django/contrib/admin/options.py", line 1886, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+  File "/home/otolaa/dj_/venv/lib/python3.8/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/otolaa/dj_/venv/lib/python3.8/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/otolaa/dj_/venv/lib/python3.8/site-packages/django/contrib/admin/options.py", line 1747, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+  File "/home/otolaa/dj_/venv/lib/python3.8/site-packages/django/contrib/admin/options.py", line 1804, in _changeform_view
+    self.log_addition(request, new_object, change_message)
+  File "/home/otolaa/dj_/venv/lib/python3.8/site-packages/django/contrib/admin/options.py", line 926, in log_addition
+    object_repr=str(obj),
+TypeError: __str__ returned non-string (type int)
+19:23:35 - autoreload - INFO - trigger_reload: 266 - /home/otolaa/dj_/quport/support_bot/models.py changed, reloading.
+19:23:37 - autoreload - INFO - trigger_reload: 266 - /home/otolaa/dj_/quport/support_bot/models.py changed, reloading.
+19:24:13 - autoreload - INFO - trigger_reload: 266 - /home/otolaa/dj_/quport/support_bot/models.py changed, reloading.
+19:24:15 - autoreload - INFO - trigger_reload: 266 - /home/otolaa/dj_/quport/support_bot/models.py changed, reloading.
+19:24:16 - autoreload - INFO - trigger_reload: 266 - /home/otolaa/dj_/quport/support_bot/models.py changed, reloading.
+19:24:25 - autoreload - INFO - trigger_reload: 266 - /home/otolaa/dj_/quport/support_bot/models.py changed, reloading.
+19:24:56 - autoreload - INFO - trigger_reload: 266 - /home/otolaa/dj_/quport/support_bot/models.py changed, reloading.
+19:24:57 - autoreload - INFO - trigger_reload: 266 - /home/otolaa/dj_/quport/support_bot/models.py changed, reloading.
+19:33:44 - autoreload - INFO - trigger_reload: 266 - /home/otolaa/dj_/quport/support_bot/admin.py changed, reloading.
+19:33:50 - autoreload - INFO - trigger_reload: 266 - /home/otolaa/dj_/quport/support_bot/admin.py changed, reloading.
+19:33:59 - autoreload - INFO - trigger_reload: 266 - /home/otolaa/dj_/quport/support_bot/admin.py changed, reloading.
+19:34:03 - autoreload - INFO - trigger_reload: 266 - /home/otolaa/dj_/quport/support_bot/admin.py changed, reloading.
+19:34:15 - autoreload - INFO - trigger_reload: 266 - /home/otolaa/dj_/quport/support_bot/admin.py changed, reloading.
+19:35:56 - autoreload - INFO - trigger_reload: 266 - /home/otolaa/dj_/quport/support_bot/admin.py changed, reloading.
+19:37:18 - autoreload - INFO - trigger_reload: 266 - /home/otolaa/dj_/quport/config/settings.py changed, reloading.
+22:37:20 - autoreload - INFO - trigger_reload: 266 - /home/otolaa/dj_/quport/config/settings.py changed, reloading.
+22:37:22 - autoreload - INFO - trigger_reload: 266 - /home/otolaa/dj_/quport/config/settings.py changed, reloading.
+22:38:40 - autoreload - INFO - trigger_reload: 266 - /home/otolaa/dj_/quport/support_bot/admin.py changed, reloading.
+22:38:43 - autoreload - INFO - trigger_reload: 266 - /home/otolaa/dj_/quport/support_bot/admin.py changed, reloading.
+22:38:44 - autoreload - INFO - trigger_reload: 266 - /home/otolaa/dj_/quport/support_bot/admin.py changed, reloading.
+22:38:48 - autoreload - INFO - trigger_reload: 266 - /home/otolaa/dj_/quport/support_bot/admin.py changed, reloading.
+22:38:50 - autoreload - INFO - trigger_reload: 266 - /home/otolaa/dj_/quport/support_bot/admin.py changed, reloading.
+22:39:18 - autoreload - INFO - trigger_reload: 266 - /home/otolaa/dj_/quport/support_bot/admin.py changed, reloading.
+22:40:03 - autoreload - INFO - trigger_reload: 266 - /home/otolaa/dj_/quport/support_bot/apps.py changed, reloading.
+22:40:05 - autoreload - INFO - trigger_reload: 266 - /home/otolaa/dj_/quport/support_bot/apps.py changed, reloading.
+22:40:21 - autoreload - INFO - trigger_reload: 266 - /home/otolaa/dj_/quport/support_bot/apps.py changed, reloading.
+22:40:56 - log - WARNING - log_response: 241 - Not Found: /favicon.ico
+22:41:03 - autoreload - INFO - trigger_reload: 266 - /home/otolaa/dj_/quport/support_bot/apps.py changed, reloading.
+22:41:06 - autoreload - INFO - trigger_reload: 266 - /home/otolaa/dj_/quport/support_bot/apps.py changed, reloading.
+22:41:19 - autoreload - INFO - trigger_reload: 266 - /home/otolaa/dj_/quport/support_bot/apps.py changed, reloading.
+22:41:27 - autoreload - INFO - trigger_reload: 266 - /home/otolaa/dj_/quport/support_bot/apps.py changed, reloading.
+22:41:31 - autoreload - INFO - trigger_reload: 266 - /home/otolaa/dj_/quport/support_bot/apps.py changed, reloading.
+22:41:42 - log - WARNING - log_response: 241 - Not Found: /favicon.ico
+22:41:44 - log - WARNING - log_response: 241 - Not Found: /favicon.ico
+22:41:53 - log - WARNING - log_response: 241 - Not Found: /favicon.ico
+22:42:02 - log - WARNING - log_response: 241 - Not Found: /favicon.ico
+22:42:04 - log - WARNING - log_response: 241 - Not Found: /favicon.ico
+22:44:10 - autoreload - INFO - trigger_reload: 266 - /home/otolaa/dj_/quport/support_bot/views.py changed, reloading.
+22:44:11 - autoreload - INFO - trigger_reload: 266 - /home/otolaa/dj_/quport/support_bot/views.py changed, reloading.
+22:44:17 - autoreload - INFO - trigger_reload: 266 - /home/otolaa/dj_/quport/support_bot/views.py changed, reloading.
+22:44:19 - autoreload - INFO - trigger_reload: 266 - /home/otolaa/dj_/quport/support_bot/views.py changed, reloading.
+22:44:20 - autoreload - INFO - trigger_reload: 266 - /home/otolaa/dj_/quport/support_bot/views.py changed, reloading.
+22:44:22 - autoreload - INFO - trigger_reload: 266 - /home/otolaa/dj_/quport/support_bot/views.py changed, reloading.
+23:39:08 - log - WARNING - log_response: 241 - Not Found: /favicon.ico
+23:40:13 - autoreload - INFO - trigger_reload: 266 - /home/otolaa/dj_/quport/support_bot/views.py changed, reloading.
+23:40:27 - autoreload - INFO - trigger_reload: 266 - /home/otolaa/dj_/quport/support_bot/views.py changed, reloading.
+23:41:26 - autoreload - INFO - trigger_reload: 266 - /home/otolaa/dj_/quport/support_bot/views.py changed, reloading.
+23:41:35 - autoreload - INFO - trigger_reload: 266 - /home/otolaa/dj_/quport/support_bot/views.py changed, reloading.
+23:42:04 - autoreload - INFO - trigger_reload: 266 - /home/otolaa/dj_/quport/support_bot/views.py changed, reloading.
+23:42:11 - autoreload - INFO - trigger_reload: 266 - /home/otolaa/dj_/quport/support_bot/views.py changed, reloading.
+23:42:27 - autoreload - INFO - trigger_reload: 266 - /home/otolaa/dj_/quport/support_bot/views.py changed, reloading.
+23:42:29 - autoreload - INFO - trigger_reload: 266 - /home/otolaa/dj_/quport/support_bot/views.py changed, reloading.
+23:42:33 - log - ERROR - log_response: 241 - Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/otolaa/dj_/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/otolaa/dj_/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/otolaa/dj_/venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/otolaa/dj_/quport/support_bot/views.py", line 85, in main_view_json
+    chat_list = [c_id.chat_id for c_id in Chat.objects]
+TypeError: 'Manager' object is not iterable
+23:42:33 - log - WARNING - log_response: 241 - Not Found: /favicon.ico
+23:43:25 - autoreload - INFO - trigger_reload: 266 - /home/otolaa/dj_/quport/support_bot/views.py changed, reloading.
+23:43:34 - autoreload - INFO - trigger_reload: 266 - /home/otolaa/dj_/quport/support_bot/views.py changed, reloading.
+23:43:36 - log - ERROR - log_response: 241 - Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/otolaa/dj_/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/otolaa/dj_/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/otolaa/dj_/venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/otolaa/dj_/quport/support_bot/views.py", line 85, in main_view_json
+    chat_list = [c_id.chat_id for c_id in Chat.objects.all]
+TypeError: 'method' object is not iterable
+23:43:36 - log - WARNING - log_response: 241 - Not Found: /favicon.ico
+23:43:41 - autoreload - INFO - trigger_reload: 266 - /home/otolaa/dj_/quport/support_bot/views.py changed, reloading.
+23:43:56 - log - WARNING - log_response: 241 - Not Found: /favicon.ico
+23:44:37 - log - WARNING - log_response: 241 - Not Found: /favicon.ico
+23:44:51 - log - WARNING - log_response: 241 - Not Found: /favicon.ico
+23:45:16 - autoreload - INFO - trigger_reload: 266 - /home/otolaa/dj_/quport/support_bot/views.py changed, reloading.
+23:45:24 - autoreload - INFO - trigger_reload: 266 - /home/otolaa/dj_/quport/support_bot/views.py changed, reloading.
+23:45:32 - autoreload - INFO - trigger_reload: 266 - /home/otolaa/dj_/quport/support_bot/views.py changed, reloading.
+23:45:33 - autoreload - INFO - trigger_reload: 266 - /home/otolaa/dj_/quport/support_bot/views.py changed, reloading.
+23:45:37 - autoreload - INFO - trigger_reload: 266 - /home/otolaa/dj_/quport/support_bot/views.py changed, reloading.
+23:45:43 - autoreload - INFO - trigger_reload: 266 - /home/otolaa/dj_/quport/support_bot/views.py changed, reloading.
+23:45:54 - autoreload - INFO - trigger_reload: 266 - /home/otolaa/dj_/quport/support_bot/views.py changed, reloading.
+23:46:20 - autoreload - INFO - trigger_reload: 266 - /home/otolaa/dj_/quport/support_bot/views.py changed, reloading.
+23:46:23 - autoreload - INFO - trigger_reload: 266 - /home/otolaa/dj_/quport/support_bot/views.py changed, reloading.
+23:46:25 - autoreload - INFO - trigger_reload: 266 - /home/otolaa/dj_/quport/support_bot/views.py changed, reloading.
+23:46:35 - autoreload - INFO - trigger_reload: 266 - /home/otolaa/dj_/quport/support_bot/views.py changed, reloading.
+23:46:37 - autoreload - INFO - trigger_reload: 266 - /home/otolaa/dj_/quport/support_bot/views.py changed, reloading.
+23:46:38 - autoreload - INFO - trigger_reload: 266 - /home/otolaa/dj_/quport/support_bot/views.py changed, reloading.
+23:46:47 - autoreload - INFO - trigger_reload: 266 - /home/otolaa/dj_/quport/support_bot/views.py changed, reloading.
+23:47:45 - autoreload - INFO - trigger_reload: 266 - /home/otolaa/dj_/quport/support_bot/urls.py changed, reloading.
+23:47:56 - autoreload - INFO - trigger_reload: 266 - /home/otolaa/dj_/quport/support_bot/views.py changed, reloading.
+23:50:33 - log - WARNING - log_response: 241 - Not Found: /favicon.ico
+23:50:47 - log - WARNING - log_response: 241 - Not Found: /favicon.ico
+23:50:48 - log - WARNING - log_response: 241 - Not Found: /favicon.ico
+23:59:09 - log - WARNING - log_response: 241 - Not Found: /favicon.ico
+23:59:12 - log - WARNING - log_response: 241 - Not Found: /favicon.ico
+23:59:24 - log - WARNING - log_response: 241 - Not Found: /favicon.ico
+23:59:27 - log - WARNING - log_response: 241 - Not Found: /favicon.ico

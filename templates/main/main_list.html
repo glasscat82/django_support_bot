@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %} SupportBot 0.1v {% endblock %}
+
+{% block content %}
+    <h1 class='mb-4'>Header:</h1>
+    <div class="row">
+    {% for item in main_list %}
+        <div class="col-4 mb-3">{{item}}</div>
+    {% endfor %}
+    </div>
+{% endblock %}

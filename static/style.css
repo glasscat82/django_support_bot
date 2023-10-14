@@ -1,0 +1,51 @@
+/* style for blog engine */
+
+html{ position: relative; min-height: 100%; }
+html, body { font-size:16px; }
+
+/* Move down content because we have a fixed navbar that is 3.5rem tall */
+body { 
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+  
+main[role='main'] {
+    flex: 1;
+    padding-bottom: 50px;
+}
+
+/* Footer */
+footer { width: 100%;
+    --bs-bg-opacity: 1;
+    background-color: rgba(var(--bs-tertiary-bg-rgb),var(--bs-bg-opacity)) !important;
+}
+
+footer > .container {
+    padding-top: 20px; padding-bottom: 20px; text-align: center;
+} 
+
+/* IE10+ */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    main[role='main']{ flex: 1 1 auto; padding-bottom: 30px; } 
+} 
+
+.navbar-nav .nav-link{ font-size: 18px; }
+button.navbar-toggler{ border-radius: 2px !important; box-shadow: none !important; }
+button.navbar-toggler > span{ width: 1.5em;  height: 1.5em;  vertical-align: middle;}
+
+button.navbar-toggler[aria-expanded="false"]{}
+button.navbar-toggler[aria-expanded="true"]{}
+
+.card > .card-header{ display: flex; justify-content: space-between; }
+.card > .card-img{ position: relative; }
+.card > .card-img > .card-img-top, .card > .card-img-top{ border-radius: 0px; }
+.card > .card-img > span.small{ position: absolute; bottom: 0px; left: 0px; right: 0px; display: block; 
+    background: rgba(0, 0, 0, 0.8); padding: 7px 10px; color: #fff; }
+.card > ul > li.list-group-item > .card-link{ text-decoration: none; }
+
+.ava_gc82{ border-radius: 50%;  margin-bottom: 2rem; max-width: 306px; }
+.text_gc82, .img_gc82{ display: flex; flex-direction: column;  flex-wrap: nowrap;  justify-content: center;  align-items: flex-start;  align-content: stretch; } 
+@media (min-width: 768px) {
+    .ava_gc82{ margin-bottom: 0rem; max-width: 100%; }
+}

@@ -5,7 +5,7 @@ __pycache__
 /contact/__pycache__
 /support_bot/migrations/*
 !/support_bot/migrations/__init__.py
-/db.sqlite3
+#/db.sqlite3
 /venv/
 /__pycache__/
 */__pycache__/

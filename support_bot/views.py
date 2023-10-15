@@ -47,7 +47,7 @@ def api_support(request, token):
         first_name = data['message']['from']['first_name'] if 'first_name' in data['message']['from'] else ''
         last_name = data['message']['from']['last_name'] if 'last_name' in data['message']['from'] else ''
         username = data['message']['from']['username'] if 'username' in data['message']['from'] else ''
-        language_code = data['message']['from']['language_code']
+        language_code = data['message']['from']['language_code'] if 'language_code' in data['message']['from'] else 'ru'
         
         m = []
         m.append(f'cid: {chat_id}')
@@ -81,7 +81,7 @@ def api_support(request, token):
     return main_view_json(request)
 
 def main_view_json(request):    
-    response = JsonResponse({'ok':True, 'result':True, 'method':request.method, 'vid':'0.1.5'})
+    response = JsonResponse({'ok':True, 'result':True, 'method':request.method, 'vid':'0.1.6'})
     response["Access-Control-Allow-Origin"] = "*"
     response["Access-Control-Allow-Methods"] = "POST, OPTIONS"
     # response["Access-Control-Max-Age"] = "1000"

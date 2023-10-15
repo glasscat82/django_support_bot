@@ -3,10 +3,10 @@ ssh -R 80:127.0.0.1:8000 serveo.net
 
 ## api на Django для bota
 toket_you_bot = ''
-api_from_telegram = https://pybo.ru/quport/{toket_you_bot}/
+api_from_telegram = https://astrum.serveo.net/quport/{toket_you_bot}/
 
 ## установить setWebhook для бота
-https://api.telegram.org/bot{toket_you_bot}/setWebhook?url=https://pybo.ru/quport/{toket_you_bot}/
+https://api.telegram.org/bot1655059083:AAGTyP3hvqTxKyZQHcaLJ4ApLjyMIq5hVig/setWebhook?url=https://astrum.serveo.net/quport/1655059083:AAGTyP3hvqTxKyZQHcaLJ4ApLjyMIq5hVig/
 
 ## 1.0 Django start
 
@@ -14,7 +14,7 @@ https://api.telegram.org/bot{toket_you_bot}/setWebhook?url=https://pybo.ru/qupor
 source venv/bin/activate # войти в среду
 deactivate # выйти из среды
 
-python manage.py runserver
+python manage.py runserver # запуск сервера
 
 /support_bot/models.py  # добавить модель и осуществить миграцию
 python manage.py makemigrations  # создает файл миграции из моделей данных

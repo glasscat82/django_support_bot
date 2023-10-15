@@ -43,10 +43,13 @@ def api_support(request, token):
         message_id = data['message']['message_id']
         from_id = data['message']['from']['id']
         is_admin = chat_id in chat_id_arr
-        chat_text = data['message']['text']        
+        chat_text = data['message']['text']
+        
+        first_name = last_name = username = ''     
         first_name = data['message']['from']['first_name'] if data['message']['from']['first_name'] else ''
         last_name = data['message']['from']['last_name'] if data['message']['from']['last_name'] else ''
         username = data['message']['from']['username'] if data['message']['from']['username'] else ''
+        
         language_code = data['message']['from']['language_code']
         
         m = []

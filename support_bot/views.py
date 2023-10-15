@@ -33,7 +33,7 @@ def api_support(request, token):
             return JsonResponse({'error':True, 'method':method})
             
         data = json.loads(data_unicode)
-        # gram.write_json(data = data, filename = f'{STATIC_DIR}/data_json.json')
+        gram.write_json(data = data, filename = f'{STATIC_DIR}/data_json.json')
         # logger.debug(data)
         
         if 'message' not in data:
@@ -43,10 +43,10 @@ def api_support(request, token):
         message_id = data['message']['message_id']
         from_id = data['message']['from']['id']
         is_admin = chat_id in chat_id_arr
-        chat_text = data['message']['text']        
-        first_name = data['message']['from']['first_name'] if data['message']['from']['first_name'] else ''
-        last_name = data['message']['from']['last_name'] if data['message']['from']['last_name'] else ''
-        username = data['message']['from']['username'] if data['message']['from']['username'] else ''
+        chat_text = data['message']['text']
+        first_name = data['message']['from']['first_name'] if 'first_name' in data['message']['from'] else ''
+        last_name = data['message']['from']['last_name'] if 'last_name' in data['message']['from'] else ''
+        username = data['message']['from']['username'] if 'username' in data['message']['from'] else ''
         language_code = data['message']['from']['language_code']
         
         m = []
@@ -82,7 +82,7 @@ def api_support(request, token):
     return main_view_json(request)
 
 def main_view_json(request):    
-    response = JsonResponse({'ok':True, 'result':True, 'method':request.method})
+    response = JsonResponse({'ok':True, 'result':True, 'method':request.method, 'vid':'0.1.4'})
     response["Access-Control-Allow-Origin"] = "*"
     response["Access-Control-Allow-Methods"] = "POST, OPTIONS"
     # response["Access-Control-Max-Age"] = "1000"

@@ -31,14 +31,14 @@ def api_support(request, token):
 
         if data_unicode is None:
             return JsonResponse({'error':True, 'method':method})
-            
+
         data = json.loads(data_unicode)
-        gram.write_json(data = data, filename = f'{STATIC_DIR}/data_json.json')
+        # gram.write_json(data = data, filename = f'{STATIC_DIR}/data_json.json')
         # logger.debug(data)
-        
+
         if 'message' not in data:
             return JsonResponse({'error':True, 'method':method})
-        
+
         chat_id = data['message']['chat']['id']
         message_id = data['message']['message_id']
         from_id = data['message']['from']['id']
@@ -50,31 +50,30 @@ def api_support(request, token):
         language_code = data['message']['from']['language_code']
         
         m = []
-        m.append(f'chat_id: {chat_id}')
-        m.append(f'{first_name}, {last_name}')
-        m.append(f'{username}, {language_code}')
+        m.append(f'cid: {chat_id}')
+        m.append(f'{first_name}, {last_name}, {username}, {language_code}')
         m.append(chat_text)
         
         if chat_text == '/getchatid':
             """ help return """
-            gram.sendMessage(chat_id, text="\n".join([f'chat_id: {chat_id}', f'message_id: {message_id}', f'from_id: {from_id}']))
+            gram.sendMessage(chat_id, text="\n".join([f'cid: {chat_id}', f'mid: {message_id}', f'fid: {from_id}']))
             return main_view_json(request)
-        
+
         if is_admin is True:
             """ is admin """
             if 'reply_to_message' in data['message']:
                 reply_to_message = data['message']['reply_to_message']['text']
                 rm_arr = reply_to_message.split('\n')
-                old_chat_id = rm_arr[0].replace('chat_id:','',1).strip()
+                old_chat_id = rm_arr[0].replace('cid:','',1).strip()
                 gram.sendMessage(old_chat_id, text=chat_text)            
             else:                
-                for c_id in chat_id_arr:
-                    gram.sendMessage(c_id, text="\n".join(m))
-        
+                for cid in chat_id_arr:
+                    gram.sendMessage(cid, text="\n".join(m))
+
         if is_admin is False:
             """ is user """
-            for c_id in chat_id_arr:
-                gram.sendMessage(c_id, text="\n".join(m))
+            for cid in chat_id_arr:
+                gram.sendMessage(cid, text="\n".join(m))
         
     except Exception as e:
         logger.error(sys.exc_info()[1])    
@@ -82,12 +81,12 @@ def api_support(request, token):
     return main_view_json(request)
 
 def main_view_json(request):    
-    response = JsonResponse({'ok':True, 'result':True, 'method':request.method, 'vid':'0.1.4'})
+    response = JsonResponse({'ok':True, 'result':True, 'method':request.method, 'vid':'0.1.5'})
     response["Access-Control-Allow-Origin"] = "*"
     response["Access-Control-Allow-Methods"] = "POST, OPTIONS"
     # response["Access-Control-Max-Age"] = "1000"
     response["Access-Control-Allow-Headers"] = "X-Requested-With, Content-Type"
-    
+
     return response
 
 class MainView(TemplateView):

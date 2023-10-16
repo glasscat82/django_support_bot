@@ -30,7 +30,7 @@ def api_support(request, token):
     
     chat_id_arr = [hid.chat_id for hid in Chat.objects.filter(token=tid.id)] # id chat for admin message,    
     bots = Telega(token = token, path = STATIC_DIR, filename = "data.json")
-    
+ 
     reply_markup = {'force_reply':True, 'input_field_placeholder':'Reply', 'selective':False}
 
     try:    
@@ -40,7 +40,7 @@ def api_support(request, token):
             return JsonResponse({'error':True, 'method':method})
 
         data = json.loads(data_unicode)
-        # bots.write_json(data = data, filename = f'{STATIC_DIR}/data_json.json')
+        # bots.write_json(data = data, filename = f'{STATIC_DIR}/data_json.json')  # this is loging data json files
         # logger.debug(data)
 
         if 'message' not in data:
@@ -57,7 +57,8 @@ def api_support(request, token):
         last_name = data['message']['from']['last_name'] if 'last_name' in data['message']['from'] else ''
         username = data['message']['from']['username'] if 'username' in data['message']['from'] else ''
         language_code = data['message']['from']['language_code'] if 'language_code' in data['message']['from'] else 'ru'
-        
+        # reply_markup_button = {'inline_keyboard':[[{'text':'Reply', 'callback_data':f'cid: {chat_id}'},]], 'resize_keyboard':True, 'one_time_keyboard':False}
+
         m = []
         m.append(f'cid: {chat_id}')
         m.append(f'{first_name}, {last_name}, @{username}, {language_code}')

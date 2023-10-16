@@ -1,12 +1,18 @@
 ## 0.0 это гениальная вещь!? https://serveo.net/
+```
 ssh -R 80:127.0.0.1:8000 serveo.net
+```
 
 ## api на Django для bota
+```
 toket_you_bot = ''
 api_from_telegram = https://astrum.serveo.net/quport/{toket_you_bot}/
+```
 
 ## установить setWebhook для бота
+```
 https://api.telegram.org/bot{toket_you_bot}/setWebhook?url=https://olim.serveo.net/quport/{toket_you_bot}/
+```
 
 ## 0.1 Django start
 

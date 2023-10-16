@@ -23,7 +23,12 @@ logger = logging.getLogger(__name__)
 def api_support(request, token):
     
     method = request.method
-    chat_id_arr = [hid.chat_id for hid in Chat.objects.all()] # id chat for admin message,    
+    tid = Bot.objects.filter(token=token).first()
+    
+    if tid is None:
+        return main_view_json(request)
+    
+    chat_id_arr = [hid.chat_id for hid in Chat.objects.filter(token=tid.id)] # id chat for admin message,    
     bots = Telega(token = token, path = STATIC_DIR, filename = "data.json")
     
     reply_markup = {'force_reply':True, 'input_field_placeholder':'Reply', 'selective':False}
@@ -100,7 +105,7 @@ def api_support(request, token):
     return main_view_json(request)
 
 def main_view_json(request):    
-    response = JsonResponse({'ok':True, 'result':True, 'method':request.method, 'vid':'0.1.8'})
+    response = JsonResponse({'ok':True, 'result':True, 'method':request.method, 'vid':'0.1.9'})
     response["Access-Control-Allow-Origin"] = "*"
     response["Access-Control-Allow-Methods"] = "POST, OPTIONS"
     # response["Access-Control-Max-Age"] = "1000"

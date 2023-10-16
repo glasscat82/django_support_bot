@@ -73,7 +73,7 @@ def api_support(request, token):
         if is_admin is False:
             """ is user """
             for cid in chat_id_arr:
-                bots.sendMessage(cid, text="\n".join(m))
+                bots.sendMessage(cid, text="\n".join(m), parse_mode='html', reply_markup={'force_reply':True, 'input_field_placeholder':'Reply', 'selective':False})
         
     except Exception as e:
         logger.error(sys.exc_info()[1])    

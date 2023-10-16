@@ -24,7 +24,7 @@ def api_support(request, token):
     
     method = request.method
     chat_id_arr = [hid.chat_id for hid in Chat.objects.all()] # id chat for admin message,
-    gram = Telega(token = token, path = STATIC_DIR, filename = "data.json")
+    bots = Telega(token = token, path = STATIC_DIR, filename = "data.json")
 
     try:    
         data_unicode = request.body.decode('utf-8')
@@ -33,7 +33,7 @@ def api_support(request, token):
             return JsonResponse({'error':True, 'method':method})
 
         data = json.loads(data_unicode)
-        # gram.write_json(data = data, filename = f'{STATIC_DIR}/data_json.json')
+        # bots.write_json(data = data, filename = f'{STATIC_DIR}/data_json.json')
         # logger.debug(data)
 
         if 'message' not in data:
@@ -51,12 +51,12 @@ def api_support(request, token):
         
         m = []
         m.append(f'cid: {chat_id}')
-        m.append(f'{first_name}, {last_name}, {username}, {language_code}')
+        m.append(f'{first_name}, {last_name}, @{username}, {language_code}')
         m.append(chat_text)
         
         if chat_text == '/getchatid':
             """ help return """
-            gram.sendMessage(chat_id, text="\n".join([f'cid: {chat_id}', f'mid: {message_id}', f'fid: {from_id}']))
+            bots.sendMessage(chat_id, text="\n".join([f'cid: {chat_id}', f'mid: {message_id}', f'fid: {from_id}']))
             return main_view_json(request)
 
         if is_admin is True:
@@ -65,15 +65,15 @@ def api_support(request, token):
                 reply_to_message = data['message']['reply_to_message']['text']
                 rm_arr = reply_to_message.split('\n')
                 old_chat_id = rm_arr[0].replace('cid:','',1).strip()
-                gram.sendMessage(old_chat_id, text=chat_text)            
-            else:                
+                bots.sendMessage(old_chat_id, text=chat_text)            
+            else:
                 for cid in chat_id_arr:
-                    gram.sendMessage(cid, text="\n".join(m))
+                    bots.sendMessage(cid, text="\n".join(m), parse_mode='html', reply_markup={'force_reply':True, 'input_field_placeholder':'Reply', 'selective':False})
 
         if is_admin is False:
             """ is user """
             for cid in chat_id_arr:
-                gram.sendMessage(cid, text="\n".join(m))
+                bots.sendMessage(cid, text="\n".join(m))
         
     except Exception as e:
         logger.error(sys.exc_info()[1])    
@@ -81,7 +81,7 @@ def api_support(request, token):
     return main_view_json(request)
 
 def main_view_json(request):    
-    response = JsonResponse({'ok':True, 'result':True, 'method':request.method, 'vid':'0.1.6'})
+    response = JsonResponse({'ok':True, 'result':True, 'method':request.method, 'vid':'0.1.7'})
     response["Access-Control-Allow-Origin"] = "*"
     response["Access-Control-Allow-Methods"] = "POST, OPTIONS"
     # response["Access-Control-Max-Age"] = "1000"

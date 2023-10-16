@@ -6,9 +6,9 @@ toket_you_bot = ''
 api_from_telegram = https://astrum.serveo.net/quport/{toket_you_bot}/
 
 ## установить setWebhook для бота
-https://api.telegram.org/bot1655059083:AAGTyP3hvqTxKyZQHcaLJ4ApLjyMIq5hVig/setWebhook?url=https://astrum.serveo.net/quport/1655059083:AAGTyP3hvqTxKyZQHcaLJ4ApLjyMIq5hVig/
+https://api.telegram.org/bot{toket_you_bot}/setWebhook?url=https://olim.serveo.net/quport/{toket_you_bot}/
 
-## 1.0 Django start
+## 0.1 Django start
 
 ```
 source venv/bin/activate # войти в среду
@@ -21,7 +21,7 @@ python manage.py makemigrations  # создает файл миграции из
 python manage.py migrate # осуществляет саму миграцию
 ```   
 
-### 2.0  linc similar 
+### 0.2  linc similar 
 ```
 https://github.com/prooxyyy/support-bot
 https://youtu.be/eclJgmpxFDI?si=BZ-LVTUhNvz5Be3T

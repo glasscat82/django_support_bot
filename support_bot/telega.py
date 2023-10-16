@@ -104,6 +104,20 @@ class Telega():
             ).json()
         return r
 
+    # core.telegram.org/bots/api#sendphoto
+    def sendPhoto(self, chat_id, photo='', caption='', parse_mode='html', reply_markup={}, token_bot=None):
+        token_bot = self.token if token_bot is None else token_bot
+        data = {'chat_id': chat_id, 'photo': photo, 'caption': caption, 'parse_mode': parse_mode}
+
+        if len(reply_markup) > 0:
+            data['reply_markup'] = json.dumps(reply_markup)
+
+        r = requests.post(
+            url = f'https://api.telegram.org/bot{token_bot}/sendPhoto',
+            data = data,
+            ).json()
+        return r
+
     # core.telegram.org/bots/api#updating-messages
     def editMessageText(self, chat_id, message_id, text='Meow!', parse_mode='html', reply_markup={}, token_bot=None):
         token_bot = self.token if token_bot is None else token_bot

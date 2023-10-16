@@ -23,8 +23,10 @@ logger = logging.getLogger(__name__)
 def api_support(request, token):
     
     method = request.method
-    chat_id_arr = [hid.chat_id for hid in Chat.objects.all()] # id chat for admin message,
+    chat_id_arr = [hid.chat_id for hid in Chat.objects.all()] # id chat for admin message,    
     bots = Telega(token = token, path = STATIC_DIR, filename = "data.json")
+    
+    reply_markup = {'force_reply':True, 'input_field_placeholder':'Reply', 'selective':False}
 
     try:    
         data_unicode = request.body.decode('utf-8')
@@ -43,7 +45,9 @@ def api_support(request, token):
         message_id = data['message']['message_id']
         from_id = data['message']['from']['id']
         is_admin = chat_id in chat_id_arr
-        chat_text = data['message']['text']
+        chat_text = data['message']['text'] if 'text' in data['message'] else False
+        photo = data['message']['photo'][0]['file_id'] if 'photo' in data['message'] else False
+        caption = data['message']['caption'] if 'caption' in data['message'] else False
         first_name = data['message']['from']['first_name'] if 'first_name' in data['message']['from'] else ''
         last_name = data['message']['from']['last_name'] if 'last_name' in data['message']['from'] else ''
         username = data['message']['from']['username'] if 'username' in data['message']['from'] else ''
@@ -52,7 +56,11 @@ def api_support(request, token):
         m = []
         m.append(f'cid: {chat_id}')
         m.append(f'{first_name}, {last_name}, @{username}, {language_code}')
-        m.append(chat_text)
+        if chat_text is not False:
+            m.append(chat_text)
+
+        if caption is not False:
+            m.append(caption)
         
         if chat_text == '/getchatid':
             """ help return """
@@ -62,18 +70,29 @@ def api_support(request, token):
         if is_admin is True:
             """ is admin """
             if 'reply_to_message' in data['message']:
-                reply_to_message = data['message']['reply_to_message']['text']
-                rm_arr = reply_to_message.split('\n')
+                reply_to_message_text = data['message']['reply_to_message']['text'] if 'text' in data['message']['reply_to_message'] else ''
+                reply_to_message_caption = data['message']['reply_to_message']['caption'] if 'caption' in data['message']['reply_to_message'] else ''
+                rm_arr = (reply_to_message_text+reply_to_message_caption).split('\n')
                 old_chat_id = rm_arr[0].replace('cid:','',1).strip()
-                bots.sendMessage(old_chat_id, text=chat_text)            
+                bots.sendMessage(old_chat_id, text=chat_text)
             else:
-                for cid in chat_id_arr:
-                    bots.sendMessage(cid, text="\n".join(m), parse_mode='html', reply_markup={'force_reply':True, 'input_field_placeholder':'Reply', 'selective':False})
+                if chat_text is not False:
+                    for cid in chat_id_arr:
+                        bots.sendMessage(cid, text="\n".join(m), parse_mode='html', reply_markup=reply_markup)
+
+                if photo is not False:
+                    for cid in chat_id_arr:
+                        bots.sendPhoto(cid, photo=photo, caption="\n".join(m), parse_mode='html', reply_markup=reply_markup)
 
         if is_admin is False:
             """ is user """
-            for cid in chat_id_arr:
-                bots.sendMessage(cid, text="\n".join(m), parse_mode='html', reply_markup={'force_reply':True, 'input_field_placeholder':'Reply', 'selective':False})
+            if chat_text is not False:
+                for cid in chat_id_arr:
+                    bots.sendMessage(cid, text="\n".join(m), parse_mode='html', reply_markup=reply_markup)
+
+            if photo is not False:
+                for cid in chat_id_arr:
+                    bots.sendPhoto(cid, photo=photo, caption="\n".join(m), parse_mode='html', reply_markup=reply_markup)
         
     except Exception as e:
         logger.error(sys.exc_info()[1])    
@@ -81,7 +100,7 @@ def api_support(request, token):
     return main_view_json(request)
 
 def main_view_json(request):    
-    response = JsonResponse({'ok':True, 'result':True, 'method':request.method, 'vid':'0.1.7'})
+    response = JsonResponse({'ok':True, 'result':True, 'method':request.method, 'vid':'0.1.8'})
     response["Access-Control-Allow-Origin"] = "*"
     response["Access-Control-Allow-Methods"] = "POST, OPTIONS"
     # response["Access-Control-Max-Age"] = "1000"
